@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build && mkdir -p dist/icons && cp -R icons/. dist/icons/",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
