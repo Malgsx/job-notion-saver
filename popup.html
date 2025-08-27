@@ -6,7 +6,7 @@
   <title>Job Notion Saver</title>
   <style>
     body {
-      width: 300px;
+      width: 320px;
       padding: 20px;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       margin: 0;
@@ -31,9 +31,7 @@
       font-size: 14px;
     }
 
-    .form-group {
-      margin-bottom: 10px;
-    }
+    .form-group { margin-bottom: 10px; }
 
     label {
       display: block;
@@ -63,15 +61,8 @@
       font-weight: 500;
       transition: background 0.2s;
     }
-
-    .btn:hover {
-      background: #005999;
-    }
-
-    .btn:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-    }
+    .btn:hover { background: #005999; }
+    .btn:disabled { background: #ccc; cursor: not-allowed; }
 
     .status {
       padding: 10px;
@@ -79,33 +70,13 @@
       font-size: 14px;
       text-align: center;
     }
+    .status.success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+    .status.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
 
-    .status.success {
-      background: #d4edda;
-      color: #155724;
-      border: 1px solid #c3e6cb;
-    }
-
-    .status.error {
-      background: #f8d7da;
-      color: #721c24;
-      border: 1px solid #f5c6cb;
-    }
-
-    .instructions {
-      font-size: 12px;
-      color: #666;
-      line-height: 1.4;
-    }
-
-    .instructions a {
-      color: #007acc;
-      text-decoration: none;
-    }
-
-    .instructions a:hover {
-      text-decoration: underline;
-    }
+    .muted { color: #777; font-size: 12px; }
+    .instructions { font-size: 12px; color: #666; line-height: 1.4; }
+    .instructions a { color: #007acc; text-decoration: none; }
+    .instructions a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -125,9 +96,16 @@
     </div>
 
     <div class="section">
+      <h3>💾 Save Current Job</h3>
+      <button id="saveCurrentJob" class="btn" disabled>Save to Notion</button>
+      <div class="muted" id="saveHint">Open a job posting on LinkedIn, Indeed, Glassdoor, Monster, or Dice.</div>
+      <div id="jobStatus"></div>
+    </div>
+
+    <div class="section">
       <h3>📋 Instructions</h3>
       <div class="instructions">
-        <p><strong>1.</strong> Create a new integration at <a href="https://www.notion.so/my-integrations" target="_blank">notion.so/my-integrations</a></p>
+        <p><strong>1.</strong> Create a new integration at <a href="https://www.notion.so/my-integrations" target="_blank" rel="noreferrer">notion.so/my-integrations</a></p>
         <p><strong>2.</strong> Copy the integration token and paste it above</p>
         <p><strong>3.</strong> Create a new database in Notion with these properties:</p>
         <ul>
@@ -141,13 +119,6 @@
         </ul>
         <p><strong>4.</strong> Share the database with your integration</p>
         <p><strong>5.</strong> Copy the database ID from the URL and paste it above</p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h3>🚀 How to Use</h3>
-      <div class="instructions">
-        <p>Navigate to a job posting on LinkedIn, Indeed, Glassdoor, or other supported sites. Click the "Save to Notion" button that appears on the page.</p>
       </div>
     </div>
   </div>
